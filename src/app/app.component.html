@@ -3,5 +3,11 @@
     <h1>Media Watch List</h1>
     <p class="description">Keeping track of the media I want to watch.</p>
   </header>
-  <mw-media-item [mediaItem]="firstMediaItem"></mw-media-item>
+  <! -- since this emit callback in the media item component was being called with the media item as an argument,
+  we can make use of a key term, $event, over here in the statement, to get access to that value.
+  When Angular evaluates the statement, it will handle getting that emit value, and setting it into the variable, $event.
+  So we can just use that in the statement, and pass it to the method call.
+  This is us in the app component telling Angular,
+  "Hey, when this media item component emits its delete event, we want to respond to that by calling the app component onMediaItemDelete method." -->
+  <mw-media-item (delete)="onMediaItemDelete($event)" [mediaItem]="firstMediaItem"></mw-media-item>
 </section>
