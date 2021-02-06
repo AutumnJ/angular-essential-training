@@ -3,5 +3,9 @@
     <h1>Media Watch List</h1>
     <p class="description">Keeping track of the media I want to watch.</p>
   </header>
-  <mw-media-item></mw-media-item>
+  <! -- In this syntax, the mediaItem, which is the Input property from the MediaItemComponent,
+  is the binding target because it is on the left of the equal sign.
+  The first mediaItem property from the AppComponent is the binding source, which is to the right of the equal sign. -->
+  <!-- Even though Angular supports this name alias, it is a recommended practice to avoid using that approach by default. -->
+  <mw-media-item [mediaItemToWatch]="firstMediaItem"></mw-media-item>
 </section>
